@@ -1,4 +1,4 @@
-# angular-weather-app — sample weather app of angular seed project
+# angular-weather-app 
 
 ### Clone angular-seed
 
