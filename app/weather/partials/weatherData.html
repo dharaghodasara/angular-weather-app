@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="row margin-top-lg">
+        <div class="col-md-12">
+            <!-- content-->
+            <div class="col-md-6 col-sm-8 col-xs-12">
+                <input id="city" class="form-control" ng-model="city" placeholder="Enter mutiple city e.g. abc,pqr">
+            </div>
+
+            <div class="col-md-2 col-sm-4">
+                <input type="button" class="btn btn-primary" value="Get Weather Data" ng-click="getWeatherData()" />
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top:20px;" ng-show="weatherData.length">
+        <div class="col-xs-12 col-sm-6" ng-repeat="weatherRecord in weatherData | filter:{cod: '200'}">
+            <weatherpanel record="weatherRecord"></weatherpanel>
+        </div>
+    </div>
+</div>
+<div class="row" ng-show="errorMessage">
+    <div class="col-md-12">
+        <h2>Oops, {{errorMessage}}</h2>
+    </div>
+</div>
+

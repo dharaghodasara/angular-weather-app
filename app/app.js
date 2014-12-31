@@ -3,12 +3,15 @@
 // Declare app level module which depends on views, and components
 angular.module('weatherApp', [
     'ngRoute',
-    'weatherApp.weatherModule'
+    'weatherApp.Controllers',
+    'weatherApp.Services',
+    'weatherApp.Directives',
+    'weatherApp.Filters'
 ]).
 config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/weather', {
-        templateUrl: 'weather/partials/weatherInformation.html',
-        controller: 'WeatherInformationCtrl'
+        templateUrl: 'weather/partials/weatherData.html',
+        controller: 'WeatherDataCtrl'
     }).otherwise({
         redirectTo: '/weather'
     });
